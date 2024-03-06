@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello</title>
+    <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+  </head>
+  <body>
+    <div class="container">
+    <h1>Hello, {{name}}! You are {{age}} years old.</h1>
+    {% if age > 30%}
+    <p>Wow, you're old!</p>
+    {% else %}
+    <p>Wow, you're young!</p>
+    {% endif %}
+    <div class="paragraph">
+    <p>It's a pleasure to meet you.</p>
+    </div>
+    </div>
+    <script src="{% static 'js/myscript.js' %}">
+      const name = document.currentScript.dataset.name;
+    </script>
+  </body>
+</html>
