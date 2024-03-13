@@ -3,28 +3,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello</title>
+    <title>Single Contact</title>
     <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
   </head>
   <body>
     <div class="container">
-    <h1>Hello, {{name}}! You are {{age}} years old.</h1>
-    {% if age > 30%}
-    <p>Wow, you're old!</p>
-    {% else %}
-    <p>Wow, you're young!</p>
-    {% endif %}
+    <h1>Details of {{contact.name}}</h1>
     <div class="paragraph">
     <p>It's a pleasure to meet you.</p>
     </div>
     </div>
     <div class="contact">
-      {% for contact in contacts %}
-      <p>{{contact.name}}: {{contact.email}}</p>
-      {% endfor %}
+        <p>{{contact.name}}: {{contact.email}}</p>
+        <p>{{contact.phone}}</p>
     </div>
     <script src="{% static 'js/myscript.js' %}">
-      const name = document.currentScript.dataset.name;
+      const name = document.currentScript.dataset.contact.name;
+      console.log(name);
     </script>
   </body>
 </html>
